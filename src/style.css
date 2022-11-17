@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Niramit&display=swap');
+
+:root {
+    font-size: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+}
+
+body {
+    background-image: url(./bg-img.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7rem;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    background-color: #ffffffb3;
+    padding-bottom: 1.5rem;
+}
+
+header h1 {
+    font-family: 'Nanum Pen Script', sans-serif;
+    font-size: 9rem;
+    font-weight: normal;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    list-style: none;
+}
+
+header li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+header li:first-child {
+    border-bottom: solid 3px #21b821;
+}
+
+main {
+    width: 70rem;
+    border-radius: 2rem;
+    padding: 5rem;
+    background-color: #ffffffb3;
+}
+
+.home-tab {
+    text-align: center;
+}
+
+.home-tab img {
+    width: 27rem;
+    height: 27rem;
+    object-fit: cover;
+    margin: 3rem 0;
+    border-radius: 50%;
+    opacity: 0.9;
+}
+
+.hours h3 {
+    width: 30%;
+    padding-bottom: 1rem;
+    margin: 0 auto 1rem;
+    border-bottom: solid 3px #21b821;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #ffffffb3;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    width: 2rem;
+    transition: 0.5s cubic-bezier(0.39, -0.575, 0.565, 1);
+}
+footer img:hover {
+    transform: rotate(360deg);
+}
