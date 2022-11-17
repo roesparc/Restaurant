@@ -14,7 +14,7 @@
 }
 
 body {
-    background-image: url(./bg-img.jpg);
+    background-image: url(./img/bg-img.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -72,11 +72,11 @@ main {
     background-color: #ffffffb3;
 }
 
-.home-tab {
+.home {
     text-align: center;
 }
 
-.home-tab img {
+.home img {
     width: 27rem;
     height: 27rem;
     object-fit: cover;
