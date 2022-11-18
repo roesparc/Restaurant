@@ -1,6 +1,6 @@
 import homeImg from './img/home-img.jpg';
 
-export default function home() {
+function home() {
     const home = document.createElement('div');
     home.classList.add('home');
 
@@ -57,4 +57,10 @@ function hours() {
     hours.appendChild(sunday);
 
     return hours;
+}
+
+export default function insertHome() {
+    const main = document.querySelector('main');
+    main.textContent = '';
+    main.appendChild(home());
 }
