@@ -1,6 +1,7 @@
 import './style.css';
 import ghIcon from './img/gh-icon.png';
 import home from './home/home';
+import menu from './menu/menu';
 
 const init = (() => {
     const content = document.querySelector('#content');
@@ -8,6 +9,8 @@ const init = (() => {
     content.appendChild(createHeader());
     content.appendChild(createMain());
     content.appendChild(createFooter());
+
+    home();
 })();
 
 function createHeader() {
@@ -21,16 +24,22 @@ function createHeader() {
     const navUl = document.createElement('ul');
 
     const liHome = document.createElement('li');
-    liHome.classList.add('home-tab');
+    liHome.classList.add('tab');
+    liHome.classList.add('selected');
     liHome.textContent = 'Home';
+    liHome.addEventListener('click', setAsSelected);
+    liHome.addEventListener('click', home);
 
     const liMenu = document.createElement('li');
-    liMenu.classList.add('menu-tab');
+    liMenu.classList.add('tab');
     liMenu.textContent = 'Menu';
+    liMenu.addEventListener('click', setAsSelected);
+    liMenu.addEventListener('click', menu);
 
     const liContact = document.createElement('li');
-    liContact.classList.add('contact-tab');
+    liContact.classList.add('tab');
     liContact.textContent = 'Contact';
+    liContact.addEventListener('click', setAsSelected);
 
     header.appendChild(restName);
     header.appendChild(headerNav);
@@ -42,10 +51,20 @@ function createHeader() {
     return header;
 }
 
+function setAsSelected() {
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach((tab) => {
+        if (tab == this) {
+            tab.classList.add('selected');
+        } else {
+            tab.classList.remove('selected');
+        }
+    });
+}
+
 function createMain() {
     const main = document.createElement('main');
-
-    main.appendChild(home());
 
     return main;
 }
