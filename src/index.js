@@ -2,6 +2,7 @@ import './style.css';
 import ghIcon from './img/gh-icon.png';
 import home from './home/home';
 import menu from './menu/menu';
+import contact from './contact/contact';
 
 const init = (() => {
     const content = document.querySelector('#content');
@@ -40,6 +41,7 @@ function createHeader() {
     liContact.classList.add('tab');
     liContact.textContent = 'Contact';
     liContact.addEventListener('click', setAsSelected);
+    liContact.addEventListener('click', contact);
 
     header.appendChild(restName);
     header.appendChild(headerNav);
