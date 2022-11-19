@@ -2,6 +2,13 @@
 
 :root {
     font-size: 12px;
+
+    --main-width: 70rem;
+    --home-img-size: 27rem;
+    --standard-imge-size: 20rem;
+
+    --default-color: #21B821;
+    --default-background-color: #FFFFFFB3;
 }
 
 * {
@@ -39,7 +46,7 @@ h3 {
 header {
     width: 100%;
     text-align: center;
-    background-color: #ffffffb3;
+    background-color: var(--default-background-color);
     padding-bottom: 1.5rem;
 }
 
@@ -59,17 +66,26 @@ header ul {
 header li {
     padding: 0.5rem;
     cursor: pointer;
+    border-bottom: solid 3px transparent;
+    transition: 0.3s;
+}
+header li:hover {
+    scale: 1.1;
 }
 
 .selected {
-    border-bottom: solid 3px #21b821;
+    border-bottom: solid 3px var(--default-color);
 }
 
 main {
-    width: 70rem;
+    width: var(--main-width);
     border-radius: 2rem;
     padding: 5rem;
-    background-color: #ffffffb3;
+    background-color: var(--default-background-color);
+}
+
+.home, .menu, .contact {
+    animation: reveal 1s;
 }
 
 .home {
@@ -77,8 +93,8 @@ main {
 }
 
 .home img {
-    width: 27rem;
-    height: 27rem;
+    width: var(--home-img-size);
+    height: var(--home-img-size);
     object-fit: cover;
     margin: 3rem 0;
     border-radius: 50%;
@@ -89,15 +105,17 @@ main {
     width: 30%;
     padding-bottom: 1rem;
     margin: 0 auto 1rem;
-    border-bottom: solid 3px #21b821;
+    border-bottom: solid 3px var(--default-color);
 }
 
-.menu > div {
+.menu > div,
+.contact > div {
     display: flex;
     align-items: center;
 }
 
-.menu > div > div {
+.menu > div > div,
+.contact > div > div {
     height: fit-content;
     padding: 1rem;
 }
@@ -106,13 +124,45 @@ main {
     margin-bottom: 1rem;
 }
 
-.menu img {
+.menu img,
+.contact img {
     flex-shrink: 0;
-    width: 20rem;
-    height: 20rem;
+    width: var(--standard-imge-size);
+    height: var(--standard-imge-size);
     object-fit: cover;
     border-radius: 50%;
     opacity: 0.9;
+}
+
+.contact h2 {
+    width: fit-content;
+    margin: auto;
+    padding: 0 2rem 1rem;
+    border-bottom: solid 3px var(--default-color);
+}
+
+.contact > div {
+    width: 42rem;
+    justify-content: space-between;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #EFFFEF;
+    border-radius: 3rem;
+}
+
+.contact img {
+    border-radius: 3rem;
+}
+
+.contact > h3 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact > img {
+    width: auto;
+    display: block;
+    margin: auto;
 }
 
 footer {
@@ -122,12 +172,12 @@ footer {
     align-content: center;
     gap: 0.5rem;
     padding: 1rem;
-    background-color: #ffffffb3;
+    background-color: var(--default-background-color);
 }
 
 footer a {
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 footer a:hover {
     text-decoration: underline;
@@ -139,4 +189,13 @@ footer img {
 }
 footer img:hover {
     transform: rotate(360deg);
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
